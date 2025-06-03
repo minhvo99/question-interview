@@ -1,9 +1,9 @@
 import { AccordionDetails } from '@mui/material';
+import { useEffect } from 'react';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/vs2015.css'; // Dark theme giống VS Code
 
 function QuestionDetail({ description }) {
-  if (!description) return null;
-
-  // Xử lý HTML để loại bỏ DOCTYPE và html wrapper
   const cleanHtml = description
     .replace(/<!DOCTYPE html>/g, '')
     .replace(/<html[^>]*>/g, '')
@@ -12,6 +12,14 @@ function QuestionDetail({ description }) {
     .replace(/<body[^>]*>/g, '')
     .replace(/<\/body>/g, '')
     .trim();
+
+  useEffect(() => {
+    // Tự động detect và highlight tất cả code blocks
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  }, [cleanHtml]);
+  if (!description) return null;
 
   return (
     <AccordionDetails>
