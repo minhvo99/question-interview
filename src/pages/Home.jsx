@@ -60,7 +60,7 @@ function Home() {
         {!loading && !error && !selectedCategory && (
           <p className='text-center mt-4'>Please select a category</p>
         )}
-        {selectedCategory &&
+        {questions &&
           questions.map((question, index) => (
             <QuestionList
               key={question.Id}

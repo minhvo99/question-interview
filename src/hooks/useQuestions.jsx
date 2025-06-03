@@ -11,6 +11,7 @@ export const useQuestions = (category) => {
     const fetchQuestions = async () => {
       setLoading(true);
       setError(null);
+      setQuestions([]);
 
       try {
         const response = await fetch(`/${category}.json`);
