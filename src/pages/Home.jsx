@@ -12,6 +12,7 @@ function Home() {
   const [sesstion, setSesstion] = useState({
     title: '',
     total: 0,
+    icon: '',
   });
 
   return (
@@ -34,6 +35,7 @@ function Home() {
                     setSesstion({
                       title: question.Name,
                       total: question.QuestionsNumber,
+                      icon: question.Icon,
                     });
                   }}
                   className={`hover:bg-blue-100 ${
@@ -47,7 +49,12 @@ function Home() {
             ))}
           </ul>
           {sesstion.title && (
-            <div className='mt-10 mb-2 text-center border rounded p-2 shadow-md border-gray-300'>
+            <div className='flex items-center mt-10 mb-2 text-center border rounded p-2 shadow-md border-gray-300'>
+              <img
+                alt='Natacha'
+                src={`data:image/png;base64, ${sesstion.icon}`}
+                className='w-10 h-10 rounded-full pr-2'
+              />
               <h2 className='text-2xl font-semibold'>
                 {sesstion.total} Câu hỏi phỏng vấn {sesstion.title}
               </h2>
