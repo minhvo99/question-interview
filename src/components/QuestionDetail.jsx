@@ -1,14 +1,24 @@
-import { AccordionDetails, Typography } from '@mui/material';
+import { AccordionDetails } from '@mui/material';
 
 function QuestionDetail({ description }) {
   if (!description) return null;
 
+  // Xử lý HTML để loại bỏ DOCTYPE và html wrapper
+  const cleanHtml = description
+    .replace(/<!DOCTYPE html>/g, '')
+    .replace(/<html[^>]*>/g, '')
+    .replace(/<\/html>/g, '')
+    .replace(/<head[^>]*>[\s\S]*?<\/head>/g, '')
+    .replace(/<body[^>]*>/g, '')
+    .replace(/<\/body>/g, '')
+    .trim();
+
   return (
     <AccordionDetails>
-      <Typography
-        className='prose max-w-none bg-slate-200 text-gray-500 p-4 rounded-lg'
-        dangerouslySetInnerHTML={{ __html: description }}
-      ></Typography>
+      <div
+        className='question-content p-4 rounded-lg overflow-auto max-h-96'
+        dangerouslySetInnerHTML={{ __html: cleanHtml }}
+      />
     </AccordionDetails>
   );
 }
