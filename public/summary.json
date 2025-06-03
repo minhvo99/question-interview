@@ -1,0 +1,149 @@
+{
+  "totalFiles": 28,
+  "processedFiles": 28,
+  "errorFiles": [],
+  "totalQuestions": 1940,
+  "completedAt": "2025-06-03T09:35:29.674Z",
+  "fileResults": [
+    {
+      "fileName": "net-core",
+      "questionCount": 51,
+      "status": "success"
+    },
+    {
+      "fileName": "adonet",
+      "questionCount": 51,
+      "status": "success"
+    },
+    {
+      "fileName": "agile-scrum",
+      "questionCount": 47,
+      "status": "success"
+    },
+    {
+      "fileName": "android",
+      "questionCount": 121,
+      "status": "success"
+    },
+    {
+      "fileName": "angular",
+      "questionCount": 104,
+      "status": "success"
+    },
+    {
+      "fileName": "angularjs",
+      "questionCount": 52,
+      "status": "success"
+    },
+    {
+      "fileName": "aspnet-core",
+      "questionCount": 19,
+      "status": "success"
+    },
+    {
+      "fileName": "aspnet-web-api",
+      "questionCount": 29,
+      "status": "success"
+    },
+    {
+      "fileName": "aspnetaspnet-mvc",
+      "questionCount": 77,
+      "status": "success"
+    },
+    {
+      "fileName": "azure",
+      "questionCount": 54,
+      "status": "success"
+    },
+    {
+      "fileName": "cnet",
+      "questionCount": 119,
+      "status": "success"
+    },
+    {
+      "fileName": "cc",
+      "questionCount": 7,
+      "status": "success"
+    },
+    {
+      "fileName": "flutter",
+      "questionCount": 64,
+      "status": "success"
+    },
+    {
+      "fileName": "go",
+      "questionCount": 44,
+      "status": "success"
+    },
+    {
+      "fileName": "htmlcss",
+      "questionCount": 62,
+      "status": "success"
+    },
+    {
+      "fileName": "java",
+      "questionCount": 163,
+      "status": "success"
+    },
+    {
+      "fileName": "javascript",
+      "questionCount": 81,
+      "status": "success"
+    },
+    {
+      "fileName": "jquery",
+      "questionCount": 46,
+      "status": "success"
+    },
+    {
+      "fileName": "nodejs",
+      "questionCount": 86,
+      "status": "success"
+    },
+    {
+      "fileName": "objectivec",
+      "questionCount": 59,
+      "status": "success"
+    },
+    {
+      "fileName": "php",
+      "questionCount": 84,
+      "status": "success"
+    },
+    {
+      "fileName": "python",
+      "questionCount": 78,
+      "status": "success"
+    },
+    {
+      "fileName": "react-native",
+      "questionCount": 78,
+      "status": "success"
+    },
+    {
+      "fileName": "reactjs",
+      "questionCount": 129,
+      "status": "success"
+    },
+    {
+      "fileName": "ruby-on-rails",
+      "questionCount": 11,
+      "status": "success"
+    },
+    {
+      "fileName": "sql-server",
+      "questionCount": 72,
+      "status": "success"
+    },
+    {
+      "fileName": "swift",
+      "questionCount": 63,
+      "status": "success"
+    },
+    {
+      "fileName": "typescript",
+      "questionCount": 89,
+      "status": "success"
+    }
+  ]
+}

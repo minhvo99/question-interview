@@ -1,0 +1,79 @@
+[
+  {
+    "Id": 100644,
+    "Title": "ActiveJob là gì? Khi nào ta sử dụng chúng?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>Active Jobs</strong> l&agrave; một framework cho việc thiết lập c&aacute;c jobs v&agrave; l&agrave;m ch&uacute;ng c&oacute; thể chạy tr&ecirc;n nhiều backends.</p>\n<p>Hiểu đơn giản hơn l&agrave; n&oacute; sẽ tạo ra 1 luồng ri&ecirc;ng giống trong Java để thực hiện một c&ocirc;ng việc kh&aacute;c m&agrave; kh&ocirc;ng ảnh hưởng đến luồng ch&iacute;nh. Điều đ&oacute; l&agrave;m tăng trải nghiệm người d&ugrave;ng.</p>\n<p>Những jobs chủ yếu ở đ&acirc;y l&agrave; việc <strong>đặt lịch dọn dẹp r&aacute;c</strong>, hay việc <strong>t&iacute;nh to&aacute;n ph&iacute;</strong> hoặc <strong>gửi mail</strong>. Mọi thứ c&oacute; thể được chia th&agrave;nh c&aacute;c phần nhỏ hơn của c&ocirc;ng việc để chạy song song. Điều đ&oacute; c&oacute; thể gi&uacute;p tăng tốc độ hệ thống l&ecirc;n rất nhiều thay v&igrave; chạy theo c&aacute;ch truyền thống.</p>\n<p>Active Job lần đầu ti&ecirc;n được giới thiệu trong Rails 4.2 như l&agrave; một c&aacute;ch để chuẩn h&oacute;a giao diện cho một số t&ugrave;y chọn h&agrave;ng đợi đ&atilde; c&oacute;. C&aacute;c h&agrave;ng đợi phổ biến nhất được sử dụng trong c&aacute;c ứng dụng Rails l&agrave; Sidekiq, Resque, v&agrave; Delayed Job.</p>\n<p>Active Job cho ph&eacute;p ứng dụng Rails của bạn l&agrave;m việc với bất kỳ một trong số những h&agrave;ng đợi kia (cũng như c&aacute;c h&agrave;ng đợi kh&aacute;c) th&ocirc;ng qua một giao diện chuẩn duy nhất.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "activejob-la-gi-khi-nao-ta-su-dung-chung"
+  },
+  {
+    "Id": 100581,
+    "Title": "Hàm dựng trong Ruby được khởi tạo như thế nào?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Ruby kh&ocirc;ng sử dụng từ kh&oacute;a constructor m&agrave; sử dụng initialize để khởi tạo h&agrave;m dựng.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "ham-dung-trong-ruby-duoc-khoi-tao-nhu-the-nao"
+  },
+  {
+    "Id": 100630,
+    "Title": "Phân biệt map, select, collect, reject, detect, each, inject?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<ul>\n<li><strong>map </strong>v&agrave; <strong>select</strong>: Chạy qua từng phần tử trong mảng v&agrave; thực hiện c&acirc;u lệnh trong block, sau đ&oacute; return về mảng kết quả.</li>\n<li><strong>collect</strong>: return về 1 mảng từ mảng ban đầu với điều kiện trong block reject.</li>\n<li><strong>detect</strong>: tr&aacute;i ngược với collect, return về gi&aacute; trị th&otilde;a m&atilde;n trong block, nếu c&oacute; nhiều gi&aacute; trị th&igrave; chỉ lấy gi&aacute; trị gần nhất.</li>\n<li><strong>inject </strong>v&agrave; <strong>each</strong>: đơn giản l&agrave; chạy qua từng phần tử v&agrave; thực hiện c&aacute;c c&acirc;u lệnh trong block, kh&ocirc;ng return g&igrave; cả.</li>\n</ul>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "phan-biet-map-select-collect-reject-detect-each-in"
+  },
+  {
+    "Id": 100616,
+    "Title": "Phân biệt class methods và instance methods?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Class methods n&oacute; được gọi qua class, instance methods được gọi qua object của class</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "phan-biet-class-methods-va-instance-methods"
+  },
+  {
+    "Id": 100602,
+    "Title": "Self nghĩa là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>Self</strong> l&agrave; đối tượng hiện tại. N&oacute; c&oacute; thể l&agrave; <strong>class</strong> hoặc cũng c&oacute; thể l&agrave; <strong>đối tượng</strong>.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "self-nghia-la-gi"
+  },
+  {
+    "Id": 100588,
+    "Title": "Module là gì? Sự khác nhau giữa module và class?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Module n&oacute; giống như 1 c&aacute;i thư viện, c&oacute; thể sử dụng nơi n&agrave;o cần n&oacute;, c&ograve;n class n&oacute; chỉ được sử dụng th&ocirc;ng qua đối tượng thể hiện của n&oacute;.</p>\n<p>Class c&oacute; t&iacute;nh kế thừa c&ograve;n module th&igrave; kh&ocirc;ng. Ngược lại, module c&oacute; thể include v&agrave;o bất cứ nơi n&agrave;o trong khi class th&igrave; chỉ c&oacute; thể sử dụng th&ocirc;ng qua object, ...</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "module-la-gi-su-khac-nhau-giua-module-va-class"
+  },
+  {
+    "Id": 100637,
+    "Title": "Block, Proc, Lambda là gì? Phân biệt?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Tham khảo:&nbsp;<a href=\"https://viblo.asia/p/block-proc-va-lambda-trong-ruby-jaqG0lQQGEKw\" target=\"_blank\" rel=\"noopener\">https://viblo.asia/p/block-proc-va-lambda-trong-ruby-jaqG0lQQGEKw</a></p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "block-proc-lambda-la-gi-phan-biet"
+  },
+  {
+    "Id": 100651,
+    "Title": "Asset Pipeline là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>Asset pipeline</strong> cung cấp một framework cho ph&eacute;p kết nối, n&eacute;n hay giảm bớt những t&agrave;i nguy&ecirc;n về CSS hay JS. N&oacute; c&ograve;n cho ph&eacute;p ch&uacute;ng ta c&oacute; thể viết CSS, JS bằng một số ng&ocirc;n ngữ kh&aacute;c nữa như CoffeeScript, Sass hay ERB.</p>\n<p>C&aacute;c file assets trong ứng dụng được kết nối một c&aacute;ch tự động c&ugrave;ng với những assets chứa trong gem. Asset pipeline được thực hiện bởi gem sprockets-rails , th&ocirc;ng thường khi khởi tạo ứng dụng rails n&oacute; sẽ mặc định được enable. Rails tự động th&ecirc;m v&agrave;o c&aacute;c gem sass-rails, coffee-rails v&agrave; uglifier được sử dụng bởi sprockets cho ph&eacute;p n&eacute;n c&aacute;c asset.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "asset-pipeline-la-gi"
+  },
+  {
+    "Id": 100623,
+    "Title": "Phân biêt include và extends?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Để dễ hiểu th&igrave; methods từ module dc extends v&agrave;o được gọi như l&agrave; class method, c&ograve;n methods từ module dc include v&agrave;o được gọi như l&agrave; class method</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "phan-biet-include-va-extends"
+  },
+  {
+    "Id": 100609,
+    "Title": "Nêu một vài phương thức thực thi hàm trong ruby?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>d&ugrave;ng <strong>.method_name</strong>. Tuy nhi&ecirc;n, khi bạn c&oacute; <strong>method_name</strong> l&agrave; 1 string hay 1 c&aacute;i symbol th&igrave; trong Ruby c&oacute; v&agrave;i c&aacute;ch gọi th&uacute; vị kh&aacute;c như:</p>\n<ul>\n<li><strong>.send(:method_name)</strong></li>\n<li><strong>.send(\"method_name\")</strong></li>\n<li><strong>.method(:method_name).call</strong></li>\n<li><strong>.method(\"method_name\").call</strong></li>\n</ul>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "neu-mot-vai-phuong-thuc-thuc-thi-ham-trong-ruby"
+  },
+  {
+    "Id": 100595,
+    "Title": "Làm thế nào để getter và setter trong Ruby?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<ul>\n<li>d&ugrave;ng <strong>get_name()</strong>, <strong>set_name(name)</strong>.</li>\n<li>c&aacute;c từ kh&oacute;a <strong>attr_reader</strong>, <strong>attr_writer</strong>, <strong>attr_accessor</strong>.</li>\n</ul>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "lam-the-nao-de-getter-va-setter-trong-ruby"
+  }
+]

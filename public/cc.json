@@ -1,0 +1,51 @@
+[
+  {
+    "Id": 100126,
+    "Title": "Tại sao bạn nên khai báo một hàm hủy là ảo (virtual) ?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Giả sử c&oacute; <strong>class Parent&nbsp;</strong>v&agrave;&nbsp;<strong>class Child kế thừa từ Parent</strong>.</p>\n<p>Ta định nghĩa con trỏ: <strong>Parent * p = new Child();</strong></p>\n<p>L&uacute;c n&agrave;y để tạo ra Child(), th&igrave; Parent() phải được tạo ra trước. Khi ch&uacute;ng ta <strong>delete p</strong>, th&igrave; cả 2 đối tượng n&agrave;y cũng phải được gọi <strong>Destructor</strong>. Vậy nếu kh&ocirc;ng khai b&aacute;o virtual cho h&agrave;m <strong>Destructor</strong> của Parent, th&igrave; chỉ <strong>Destructor</strong> của <strong>Parent</strong> được gọi, đối tượng <strong>Child()</strong> vẫn c&ograve;n đ&oacute;</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "tai-sao-ban-nen-khai-bao-mot-ham-huy-la-ao-virtual"
+  },
+  {
+    "Id": 100238,
+    "Title": "Điểm khác nhau giữa “++i” and “i++” là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>++i</strong>: cộng i l&ecirc;n 1 trước rồi thực hiện ph&eacute;p to&aacute;n</p>\n<p><strong>i++</strong>: thực hiện ph&eacute;p to&aacute;n trước rồi cộng i l&ecirc;n 1</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "diem-khac-nhau-giua-i-and-i-la-gi"
+  },
+  {
+    "Id": 100224,
+    "Title": "Vector là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>Vector</strong> l&agrave; một cấu tr&uacute;c dữ liệu được x&acirc;y dựng sẵn trong <strong>C++</strong></p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "vector-la-gi"
+  },
+  {
+    "Id": 100147,
+    "Title": "Làm thế nào để bạn có thể truy cập một biến mà nó bị “che khuất” bởi một biến khác có cùng tên?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>C&oacute; thể sử dụng <strong>namespace:</strong> đưa 2 biến c&ugrave;ng t&ecirc;n đ&oacute; v&agrave;o 2 <strong>namespace</strong> kh&aacute;c nhau, bạn c&oacute; 2 biến c&ugrave;ng t&ecirc;n <strong>var: namespace ns1 { int var;}</strong> <strong>namespace ns2 { int var;}</strong></p>\n<p>C&aacute;ch truy cập: <strong>ns1::var = 6; ns2::var = 9;</strong></p>\n<p>Cũng c&oacute; thể d&ugrave;ng class v&agrave; struct nhưng c&aacute;ch đ&oacute; kh&aacute; th&ocirc; thiển v&igrave; phải tạo n&ecirc;n thể hiện của class v&agrave; struct.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "lam-the-nao-de-ban-co-the-truy-cap-mot-bien-ma-no"
+  },
+  {
+    "Id": 100119,
+    "Title": "Có bao nhiêu cách để khởi tạo một kiểu dữ liệu nguyên thủy trong C++ và đó là những cách nào?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<pre class=\"language-javascript\"><code>int var_1; // Khởi tạo biến var_1 với gi&aacute; trị mặc định do m&ocirc;i trường quyết định\n\nint var_1(4); // Khởi tạo biến var_1 với gi&aacute; trị được truyền v&agrave;o\n\nint var_1(var_2); // Khởi tạo biến var_1 với gi&aacute; trị của var_2 (copy constructor)\n\nint var_1 = 4; // implicit cast\n\nint var_1{4}; // inintializer list</code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "co-bao-nhieu-cach-de-khoi-tao-mot-kieu-du-lieu-ngu"
+  },
+  {
+    "Id": 100231,
+    "Title": "Điểm khác nhau giữa ‪#‎include‬ <iostream.h> và #include <iostream> là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>iostream.h</strong> l&agrave; thư viện cũ, được thay thế bởi iostream từ C++ 98.</p>\n<p><strong>iostream.h</strong> được khai b&aacute;o to&agrave;n cục, c&ograve;n iostream được khai b&aacute;o cục bộ Th&ecirc;m c&aacute;i nữa đ&oacute; l&agrave; nếu <strong>#include</strong> th&igrave; kh&ocirc;ng cần phải th&ocirc;ng b&aacute;o sử dụng namespace std, nhưng <strong>#include</strong> th&igrave; cần.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "diem-khac-nhau-giua-include-iostreamh-va-include-i"
+  },
+  {
+    "Id": 100154,
+    "Title": "Điểm khác nhau giữa một lớp và một cấu trúc (struct) trong C++ là gì, và so sánh với ngôn ngữ C thì như thế nào?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Điểm kh&aacute;c nhau duy nhất giữa class v&agrave; struct trong C++ đ&oacute; l&agrave;, những thuộc t&iacute;nh của <strong>class</strong> nếu để mặc định th&igrave; n&oacute; l&agrave; <strong>private</strong>, của <strong>struct</strong> l&agrave; <strong>public</strong>.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "diem-khac-nhau-giua-mot-lop-va-mot-cau-truc-struct"
+  }
+]

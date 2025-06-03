@@ -1,0 +1,135 @@
+[
+  {
+    "Id": 101603,
+    "Title": "Startup class trong ASP.NET Core là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Startup class l&agrave; điểm v&agrave;o của ứng dụng APS.NET Core. Mỗi ứng dụng .NET Core phải c&oacute; class n&agrave;y. N&oacute; kh&ocirc;ng bắt buộc phải c&oacute; t&ecirc;n class l&agrave; &ldquo;Startup&rdquo;, t&ecirc;n class c&oacute; thể l&agrave; bất kỳ t&ecirc;n g&igrave;, ch&uacute;ng ta c&oacute; thể cấu h&igrave;nh startup class trong Program class.</p>\n<pre class=\"language-csharp\"><code>public class Program\n{\n   public static void Main(string[] args)\n   {\n      CreateWebHostBuilder(args).Build().Run();\n   }\n   public static IWebHostBuilder CreateWebHostBuilder(string[] args) =&gt;\n      WebHost.CreateDefaultBuilder(args)\n      .UseStartup&lt;TestClass&gt;();\n}\n</code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "startup-class-trong-aspnet-core-la-gi"
+  },
+  {
+    "Id": 101666,
+    "Title": "Tag-helper trong Asp.net Core là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>N&oacute; l&agrave; một t&iacute;nh năng được cung cấp bởi <strong>Razor view-engine</strong> cho ph&eacute;p ch&uacute;ng ta viết m&atilde; server-side để tạo v&agrave; hiển thị c&aacute;c phần tử HTML trong view (Razor). Tag-helper l&agrave; c&aacute;c lớp C# thường được d&ugrave;ng để tạo view bằng c&aacute;ch th&ecirc;m c&aacute;c phần tử HTML. Chức năng của tag-helper rất giống với HTML-helper của Asp.net MVC.</p>\n<pre class=\"language-csharp\"><code>//HTML Helper\n@Html.TextBoxFor(model =&gt; model.FirstName, \nnew { @class = \"form-control\", placeholder = \"Enter Your First Name\" }) \n\n//content with tag helper\n&lt;input asp-for=\"FirstName\" placeholder=\"Enter Your First Name\" \nclass=\"form-control\" /&gt; \n\n//Equivalent HTML\n&lt;input placeholder=\"Enter Your First Name\" class=\"form-control\" \nid=\"FirstName\" name=\"FirstName\" value=\"\" type=\"text\"&gt; </code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "taghelper-trong-aspnet-core-la-gi"
+  },
+  {
+    "Id": 101652,
+    "Title": "Làm để để thiết lập Session trong Asp.net Core?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Middleware cho Session được cung cấp bởi g&oacute;i <strong>Microsoft.AspNetCore.Session</strong>. Để sử dụng session trong ứng dụng Asp.net Core, ch&uacute;ng ta cần th&ecirc;m g&oacute;i n&agrave;y tới file <strong>.csproj</strong> v&agrave; th&ecirc;m Session Middleware tới Asp.net Core Request pipeline.</p>\n<pre class=\"language-csharp\"><code>public class Startup\n{\n   public void ConfigureServices(IServiceCollection services)\n   {\n      //\n      //\n      services.AddSession();\n      services.AddMvc();\n   }\n   public void Configure(IApplicationBuilder app, IHostingEnvironment env)\n   {\n      //\n      //\n      app.UseSession();\n      //\n      //\n   }\n}\n</code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "lam-de-de-thiet-lap-session-trong-aspnet-core"
+  },
+  {
+    "Id": 101589,
+    "Title": "Metapackage là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>.NET Core 2.0 đ&atilde; giới thiệu Metapackage, n&oacute; bao gồm tất cả c&aacute;c package được hỗ trợ bởi m&atilde; ASP.NET với c&aacute;c dependency của ch&uacute;ng v&agrave;o trong 1 package. N&oacute; gi&uacute;p ch&uacute;ng ta ph&aacute;t triển nhanh v&igrave; ch&uacute;ng ta kh&ocirc;ng y&ecirc;u cầu include c&aacute;c package ASP.NET Core ri&ecirc;ng lẻ. Microsoft.AspNetCore.All một Metapackage được cung cấp bởi ASP.NET Core.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "metapackage-la-gi"
+  },
+  {
+    "Id": 101575,
+    "Title": "ASP.NET Core cung cấp các tính năng nào?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>A<span style=\"font-family: Calibri, sans-serif; font-size: 11pt;\">SP.NET Core cung cấp c&aacute;c t&iacute;nh năng ch&iacute;nh như sau:</span></strong></p>\n<ol>\n<li>Hỗ trợ Dependency Injection.</li>\n<li>Hỗ trợ cho Logging framework v&agrave; c&oacute; thể được mở rộng.</li>\n<li>Giới thiệu web server mới: Kestrel, n&oacute; nhanh v&agrave; hỗ trợ đa nền tảng. V&igrave; vậy, một ứng dụng web c&oacute; thể chạy m&agrave; kh&ocirc;ng cần IIS, Apache v&agrave; Nginx.</li>\n<li><span lang=\"VI\">Hỗ trợ nhiều c&aacute;ch Hosting.</span></li>\n<li><span lang=\"VI\">H</span>ỗ trợ hướng module, v&igrave; vậy c&aacute;c developer cần import c&aacute;c module m&igrave;nh cần v&agrave;o trong ứng dụng. Tuy nhi&ecirc;n, .NET Core framework cũng cung cấp Meta package trong c&aacute;c thư viện.</li>\n<li>Command-line hỗ trợ tao, build v&agrave; chạy ứng dụng.</li>\n<li>Kh&ocirc;ng c&oacute; file web.config. Ch&uacute;ng ta c&oacute; thể lưu trữ c&aacute;c th&ocirc;ng tin cấu h&igrave;nh v&agrave;o file appsettings.json.</li>\n<li>Kh&ocirc;ng c&oacute; file Global.asax. Ch&uacute;ng ta c&oacute; thể đăng k&yacute; v&agrave; sử dụng c&aacute;c services v&agrave;o startup class.</li>\n<li>Hỗ trợ tốt cho lập tr&igrave;nh bất đồng bộ.</li>\n<li>Hỗ trợ WebSocket v&agrave; SignalR.</li>\n<li>Cung cấp bảo vệ chống CSRF ( Cross-Site Request Forgery )</li>\n</ol>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "aspnet-core-cung-cap-cac-tinh-nang-nao"
+  },
+  {
+    "Id": 101638,
+    "Title": "Công dụng của hàm “Map” trong IApplicationBuilder trong việc thêm Middleware vào Asp.net Core Pipeline là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><span lang=\"VI\">N&oacute; thường d&ugrave;ng để chia nh&aacute;nh Pipeline. N&oacute; ph&acirc;n nh&aacute;nh Asp.net Core Pipeline dựa v&agrave;o việc khớp đường dẫn Request. Nếu đường dẫn Request bắt đầu với đường dẫn đ&atilde; cho, Middleware tr&ecirc;n nh&aacute;nh đ&oacute; sẽ được thực thi.</span></p>\n<pre class=\"language-csharp\"><code>public void Configure(IApplicationBuilder app)\n{\n   app.Map(\"/path1\", Middleware1);\n   app.Map(\"/path2\", Middleware2);\n}\n</code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "cong-dung-cua-ham-map-trong-iapplicationbuilder-tr"
+  },
+  {
+    "Id": 101624,
+    "Title": "Middleware là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Middleware l&agrave; th&agrave;nh phần của phần mềm đ&oacute;ng vai tr&ograve; t&aacute;c động v&agrave;o request pipeline (luồng request) để xử l&yacute; ch&uacute;ng v&agrave; tạo ra response phản hồi lại client. Mỗi một tiến tr&igrave;nh middleware thao t&aacute;c với c&aacute;c request nhận được từ middleware trước n&oacute;. N&oacute; cũng c&oacute; thể quyết định gọi middleware tiếp theo trong pipeline hoặc trả về response cho middleware ngay trước n&oacute;. (ngắt pipeline).</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "middleware-la-gi"
+  },
+  {
+    "Id": 101687,
+    "Title": "Làm sao chúng ta có thể thực hiện model-binding tự động trong Razor Pages?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Razor Pages cung cấp t&ugrave;y chọn để li&ecirc;n kết thuộc t&iacute;nh một c&aacute;ch tự động&nbsp;khi truyền dữ liệu sử dụng thuộc t&iacute;nh BindProperty. Mặc định n&oacute; chỉ li&ecirc;n kết c&aacute;c thuộc t&iacute;nh với c&aacute;c method kh&ocirc;ng phải GET. Ch&uacute;ng ta cần g&aacute;n thuộc t&iacute;nh SupportsGet th&agrave;nh &ldquo;true&rdquo; để li&ecirc;n kết 1 thuộc t&iacute;nh với method GET.</p>\n<pre class=\"language-csharp\"><code>public class Test1Model : PageModel\n{\n   [BindProperty]\n   public string Name { get; set; }\n}\n</code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "lam-sao-chung-ta-co-the-thuc-hien-modelbinding-tu"
+  },
+  {
+    "Id": 101673,
+    "Title": "Làm sao để disable tag-helper ở cấp phần tử?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Ch&uacute;ng ta c&oacute; thể disable tag-helper ở cấp phần tử bằng c&aacute;ch sử dụng k&yacute; tự &ldquo;<strong>!</strong>&rdquo;. K&yacute; tự n&agrave;y phải được d&ugrave;ng ở tag đ&oacute;ng v&agrave; mở.</p>\n<pre class=\"language-csharp\"><code>&lt;!span asp-validation-for=\"phone\" class=\"divPhone\"&gt;&lt;/!span&gt;</code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "lam-sao-de-disable-taghelper-o-cap-phan-tu"
+  },
+  {
+    "Id": 101610,
+    "Title": "Hàm ConfigureServices trong startup class dùng để làm gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Đ&acirc;y l&agrave; một h&agrave;m t&ugrave;y chọn của startup class. N&oacute; được d&ugrave;ng để cấu h&igrave;nh c&aacute;c sevice được sử dụng trong ứng dụng. H&agrave;m n&agrave;y được gọi đầu ti&ecirc;n khi ứng dụng được request lần đầu. Sử dụng h&agrave;m n&agrave;y, ch&uacute;ng ta c&oacute; thể th&ecirc;m c&aacute;c service v&agrave;o DI-container, như vậy c&aacute;c service sẽ c&oacute; sẵn như 1 dependency trong constructor của controller.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "ham-configureservices-trong-startup-class-dung-de"
+  },
+  {
+    "Id": 101596,
+    "Title": "Ứng dụng ASP.NET Core có thể làm việc với framework .NET 4.x full không?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><strong>C&oacute;, th&ocirc;ng qua thư viện chuẩn .NET</strong></p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "ung-dung-aspnet-core-co-the-lam-viec-voi-framework"
+  },
+  {
+    "Id": 101659,
+    "Title": "Các file JSON nào có sẵn trong Asp.net Core?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<ul>\n<li><strong>global.json</strong></li>\n<li><strong>launchsettings.json</strong></li>\n<li><strong>appsettings.json</strong></li>\n<li><strong>bundleconfig.json</strong></li>\n<li><strong>bower.json</strong></li>\n<li><strong>package.json</strong></li>\n</ul>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "cac-file-json-nao-co-san-trong-aspnet-core"
+  },
+  {
+    "Id": 101631,
+    "Title": "IApplicationBuilder.Use() và IApplicationBuilder.Run() khác nhau như thế nào?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><span lang=\"VI\">Ch&uacute;ng ta c&oacute; thể sử dụng cả hai phương thức v&agrave;o trong phương thức Configure của startup class. </span></p>\n<p><span lang=\"VI\">Cả hai thường được sử dụng để th&ecirc;m <strong>Middleware Delegate</strong> tới Request Pipeline của ứng dụng. </span></p>\n<p><span lang=\"VI\">Việc th&ecirc;m Middleware bằng c&aacute;ch d&ugrave;ng <strong>IApplicationBuilder.Use</strong> c&oacute; thể gọi Middleware tiếp theo trong Pipeline, trong khi đ&oacute; việc d&ugrave;ng <strong>IApplicationBuilder.Run</strong> để th&ecirc;m Middleware th&igrave; sẽ kh&ocirc;ng bao giờ gọi được Middleware tiếp theo. </span></p>\n<p><span lang=\"VI\">Sau khi gọi phương thức <strong>IApplicationBuilder.Run</strong>, hệ thống ngừng th&ecirc;m Middleware trong Request Pipeline.</span></p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "iapplicationbuilderuse-va-iapplicationbuilderrun-k"
+  },
+  {
+    "Id": 101568,
+    "Title": "Asp.net core là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p><span style=\"text-indent: -24px;\">ASP.NET Core kh&ocirc;ng phải l&agrave; một phi&ecirc;n bản n&acirc;ng cấp của ASP.NET. ASP.NET Core ho&agrave;n to&agrave;n được tạo ra để l&agrave;m việc với .NET Core framework. </span></p>\n<p><span style=\"text-indent: -24px;\">N&oacute; nhanh hơn, dễ cấu h&igrave;nh chi tiết hơn, theo hướng module, dễ mở rộng v&agrave; hỗ trợ đa nền tảng. N&oacute; c&oacute; thể l&agrave;m với cả .NET Core v&agrave; .NET framework th&ocirc;ng qua .NET standard framework. </span></p>\n<p><span style=\"text-indent: -24px;\">ASP.NET Core l&agrave; th&iacute;ch hợp nhất để ph&aacute;t triển c&aacute;c ứng dụng cloud-based như web, mobile, IoT.</span></p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "aspnet-core-la-gi"
+  },
+  {
+    "Id": 101645,
+    "Title": "Trình bày về routing trong Asp.net Core?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Routing l&agrave; chức năng &aacute;nh xạ c&aacute;c request tới bộ xử l&yacute; định tuyến. Route c&oacute; thể c&oacute; nhiều gi&aacute; trị ( được tr&iacute;ch xuất ra từ URL) thường được d&ugrave;ng để xử l&yacute; request. Tất cả c&aacute;c Route được đăng k&yacute; khi ứng dụng bắt đầu. Asp.net Core hỗ trợ 2 loại Routing:</p>\n<ul>\n<li>Định tuyến th&ocirc;ng thường</li>\n<li>Định tuyến thuộc t&iacute;nh (Attribute routing)</li>\n</ul>\n<p>Routing sử dụng c&aacute;c Route trong việc &aacute;nh xạ c&aacute;c Request với bộ xử l&yacute; tuyến v&agrave; Generate URL được d&ugrave;ng trong việc hồi đ&aacute;p request. Hầu hết ứng dụng c&oacute; 1 bộ tập hợp Route v&agrave; bộ tập hợp n&agrave;y được d&ugrave;ng trong việc xử l&yacute; request. Phương thức RouteAsync thường được d&ugrave;ng để &aacute;nh xạ request (ứng với URL) c&oacute; sẵn trong bộ tập hợp Route.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "trinh-bay-ve-routing-trong-aspnet-core"
+  },
+  {
+    "Id": 101582,
+    "Title": "Những ưu điểm nào của ASP.NET Core so với ASP.NET ?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<ol>\n<li>Hỗ trợ đa nền tảng, c&oacute; thể chạy được tr&ecirc;n Windows, Linux, Mac.</li>\n<li>Kh&ocirc;ng c&oacute; dependency trong c&agrave;i đặt framework bởi v&igrave; tất cả c&aacute;c dependency bắt buộc đều được gửi c&ugrave;ng ứng dụng.</li>\n<li>ASP.NET Core c&oacute; thể xử l&yacute; nhiều request hơn APS.NET.</li>\n<li>Nhiều t&ugrave;y chọn deloy web c&oacute; sẵn trong ASP.NET Core.</li>\n</ol>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "nhung-uu-diem-nao-cua-aspnet-core-so-voi-aspnet-"
+  },
+  {
+    "Id": 101617,
+    "Title": "Hàm Configure trong startup class dùng để làm gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>N&oacute; định nghĩa c&aacute;ch m&agrave; ứng dụng sẽ hồi đ&aacute;p tới mỗi HTTP request. Ch&uacute;ng ta c&oacute; thể cấu h&igrave;nh Request Pipeline bằng c&aacute;ch cấu h&igrave;nh Middleware. N&oacute; chấp nhận IApplicationBuilder như l&agrave; 1 parameter v&agrave; n&oacute; cũng c&oacute; th&ecirc;m 2 parameter t&ugrave;y chọn: IHostingEnvironment v&agrave; ILoggerFactory. Sử dụng h&agrave;m n&agrave;y, ch&uacute;ng ta c&oacute; thể cấu h&igrave;nh Middleware c&oacute; sẵn như Routing, authentication, session, &hellip; cũng như c&aacute;c Third-party Middleware.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "ham-configure-trong-startup-class-dung-de-lam-gi"
+  },
+  {
+    "Id": 101694,
+    "Title": "Làm sao để thêm một Service Dependency vào Controller?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>C&oacute; 3 bước đơn giản để th&ecirc;m một custom Service Dependency v&agrave;o một Controller.</p>\n<p><strong>Bước 1: Tạo service.</strong></p>\n<pre class=\"language-csharp\"><code>public interface IHelloWorldService\n{\n   string SaysHello();\n}\n\npublic class HelloWorldService: IHelloWorldService\n{\n   public string SaysHello()\n   {\n      return \"Hello \";\n   }\n}\n</code></pre>\n<p><strong>Bước 2:&nbsp;<!--[endif]-->Th&ecirc;m service n&agrave;y v&agrave;o Service container ( bằng Singleton, hoặc Transient hoặc Scoped).</strong></p>\n<pre class=\"language-csharp\"><code>public void ConfigureServices(IServiceCollection services)\n{\n   //\n   //\n   services.AddTransient&lt;IHelloWorldService, HelloWorldService&gt;();\n   //\n   //\n}\n</code></pre>\n<p><strong>Bước 3: Sử dụng service n&agrave;y trong Controller.</strong></p>\n<pre class=\"language-csharp\"><code>public class HomeController: Controller\n{\n   IHelloWorldService _helloWorldService;\n   public HomeController(IHelloWorldService helloWorldService)\n   {\n      _helloWorldService = helloWorldService;\n   }\n}\n</code></pre>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "lam-sao-de-them-mot-service-dependency-vao-control"
+  },
+  {
+    "Id": 101680,
+    "Title": "Razor Pages trong Asp.net Core là gì?",
+    "Description": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<p>Đ&acirc;y l&agrave; một t&iacute;nh năng mới được giới thiệu trong <strong>Asp.net Core 2.0</strong>. N&oacute; tu&acirc;n theo một <strong>m&ocirc; h&igrave;nh ph&aacute;t triển tập trung</strong> như Asp.net Web forms. N&oacute; hỗ trợ tất cả t&iacute;nh năng của Asp.net Core.</p>\n<pre class=\"language-csharp\"><code>@page \n&lt;h1&gt; Hello, Book Reader!&lt;/h1&gt; \n&lt;h2&gt; This is Razor Pages &lt;/h2&gt;\n</code></pre>\n<p><strong>Razor Pages bắt đầu với directive &ldquo;@page&rdquo;</strong>. Directive n&agrave;y xử l&yacute; c&aacute;c y&ecirc;u cầu trực tiếp m&agrave; kh&ocirc;ng phải th&ocirc;ng qua Controller. Razor Pages c&oacute; thể c&oacute; file code-behind, nhưng kh&ocirc;ng thật sự l&agrave; file code-behind. <strong>N&oacute; l&agrave; lớp kế thừa từ lớp PageModel</strong>.</p>\n</body>\n</html>",
+    "Level": "BAS",
+    "URL": "razor-pages-trong-aspnet-core-la-gi"
+  }
+]
