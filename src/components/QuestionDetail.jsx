@@ -6,7 +6,7 @@ function QuestionDetail({ description }) {
   return (
     <AccordionDetails>
       <Typography
-        className='prose max-w-none'
+        className='prose max-w-none bg-slate-200 text-gray-500 p-4 rounded-lg'
         dangerouslySetInnerHTML={{ __html: description }}
       ></Typography>
     </AccordionDetails>
