@@ -24,7 +24,7 @@ function QuestionDetail({ description }) {
   return (
     <AccordionDetails>
       <div
-        className='question-content p-4 rounded-lg overflow-auto max-h-96'
+        className='question-content p-4 rounded-lg '
         dangerouslySetInnerHTML={{ __html: cleanHtml }}
       />
     </AccordionDetails>
