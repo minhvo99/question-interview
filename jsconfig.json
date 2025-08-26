@@ -7,7 +7,9 @@
       "@pages/*": ["src/pages/*"],
       "@hooks/*": ["src/hooks/*"],
       "@context/*": ["src/context/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@redux/*": ["src/redux/*"],
+      "@services/*": ["src/services/*"]
     }
   }
 }

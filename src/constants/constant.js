@@ -420,3 +420,25 @@ export const QUESTIONS = [
     Show: false,
   },
 ];
+export const LEVELMAPPING = {
+  BAS: {
+    name: 'Basic',
+    color: 'primary',
+  },
+  JUN: {
+    name: 'Junior',
+    color: 'secondary',
+  },
+  MID: {
+    name: 'Middle',
+    color: 'success',
+  },
+  SEN: {
+    name: 'Senior',
+    color: 'warning',
+  },
+  MAS: {
+    name: 'Master',
+    color: 'error',
+  },
+};

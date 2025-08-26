@@ -1,14 +1,14 @@
 import Loading from '@components/Loading';
 import QuestionList from '@components/QuestionList';
 import { QUESTIONS } from '@constants/constant';
-import { useQuestions } from '@hooks/useQuestions';
+// import { useQuestions } from '@hooks/useQuestions';
 import { Avatar } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import { useState } from 'react';
 
 function Home() {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const { questions = [], loading, error } = useQuestions(selectedCategory);
+  // const { questions = [], loading, error } = useQuestions(selectedCategory);
   const [sesstion, setSesstion] = useState({
     title: '',
     total: 0,
@@ -61,13 +61,17 @@ function Home() {
             </div>
           )}
         </div>
+        {selectedCategory && (
+          <QuestionList selectedCategory={selectedCategory} />
+        )}
 
-        {loading && <Loading />}
+        {/* {loading && <Loading />}
         {error && <p className='text-center mt-4 text-red-500'>{error}</p>}
-        {!loading && !error && !selectedCategory && (
+        */}
+        {!selectedCategory && (
           <p className='text-center mt-4'>Please select a category</p>
         )}
-        {questions &&
+        {/* {questions &&
           questions.map((question, index) => (
             <QuestionList
               key={question.Id}
@@ -77,7 +81,7 @@ function Home() {
               level={question.Level}
               url={question.URL}
             />
-          ))}
+          ))} */}
       </div>
     </div>
   );

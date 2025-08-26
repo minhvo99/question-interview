@@ -14,7 +14,6 @@ function QuestionDetail({ description }) {
     .trim();
 
   useEffect(() => {
-    // Tự động detect và highlight tất cả code blocks
     document.querySelectorAll('pre code').forEach((el) => {
       hljs.highlightElement(el);
     });

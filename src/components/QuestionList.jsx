@@ -1,58 +1,95 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import QuestionDetail from './QuestionDetail';
 import { Chip } from '@mui/material';
+import { useGetAllQuestionsQuery } from '@services/rootApi';
+import Loading from './Loading';
+import { LEVELMAPPING } from '../constants/constant';
 
-function QuestionList({ title, description, idx, level }) {
-  const levelMapping = {
-    BAS: {
-      name: 'Basic',
-      color: 'primary',
-    },
-    JUN: {
-      name: 'Junior',
-      color: 'secondary',
-    },
-    MID: {
-      name: 'Middle',
-      color: 'success',
-    },
-    SEN: {
-      name: 'Senior',
-      color: 'warning',
-    },
-    MAS: {
-      name: 'Master',
-      color: 'error',
-    },
-  };
+function QuestionList({ selectedCategory }) {
+  const [queryParams, setQueryParams] = useState({
+    collection: selectedCategory,
+    page: 1,
+  });
+  const [questions, setQuestions] = useState([]);
+
+  const { data: posts, isFetching } = useGetAllQuestionsQuery(queryParams);
+
+  useEffect(() => {
+    setQueryParams({ collection: selectedCategory, page: 1 });
+    setQuestions([]);
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    if (posts?.data) {
+      setQuestions((prev) => {
+        let newList;
+        if (queryParams.page === 1) {
+          newList = posts.data;
+        } else {
+          newList = [...prev, ...posts.data];
+        }
+
+        // Lọc bỏ trùng key theo id
+        const uniqueList = newList.filter(
+          (item, index, self) =>
+            index === self.findIndex((q) => q.id === item.id),
+        );
+
+        return uniqueList;
+      });
+    }
+  }, [posts, queryParams.page]);
+
+  const handleScroll = useCallback(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 50 >=
+      document.documentElement.offsetHeight
+    ) {
+      if (!isFetching && posts?.data?.length > 0) {
+        setQueryParams((prev) => ({
+          ...prev,
+          page: prev.page + 1,
+        }));
+      }
+    }
+  }, [isFetching, posts]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
   return (
     <div className='mt-2 pb-1'>
-      <Accordion className='mb-2'>
-        <AccordionSummary
-          expandIcon={<ArrowDropDownIcon />}
-          aria-controls='panel2-content'
-          id='panel2-header'
-        >
-          <Typography
-            component='span'
-            className='flex justify-between items-center w-full'
+      {questions.map((ques, idx) => (
+        <Accordion className='mb-2' key={ques.id}>
+          <AccordionSummary
+            expandIcon={<ArrowDropDownIcon />}
+            aria-controls='panel2-content'
+            id={`panel2-header-${idx}`}
           >
-            <p className='text-lg font-semibold'>
-              {idx}. {title}
-            </p>
-            <Chip
-              label={levelMapping[level].name}
-              color={levelMapping[level].color}
-            />
-          </Typography>
-        </AccordionSummary>
+            <Typography
+              component='span'
+              className='flex justify-between items-center w-full'
+            >
+              <p className='text-lg font-semibold'>
+                {idx + 1}. {ques.Title}
+              </p>
+              <Chip
+                label={LEVELMAPPING[ques.Level].name}
+                color={LEVELMAPPING[ques.Level].color}
+              />
+            </Typography>
+          </AccordionSummary>
+          <QuestionDetail description={ques.Description} />
+        </Accordion>
+      ))}
 
-        <QuestionDetail description={description} />
-      </Accordion>
+      {isFetching && <Loading />}
     </div>
   );
 }
