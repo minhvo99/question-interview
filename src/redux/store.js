@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { rootApi } from '@services/rootApi';
+import snakebarReducer from './slices/snackBarSlice';
+import dialogReducer from './slices/dialogSlice';
 // import storage from 'redux-persist/lib/storage';
 // import {
 //   persistReducer,
@@ -42,6 +44,8 @@ import { rootApi } from '@services/rootApi';
 export const store = configureStore({
   reducer: {
     [rootApi.reducerPath]: rootApi.reducer,
+    snakebar: snakebarReducer,
+    dialog: dialogReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(rootApi.middleware),

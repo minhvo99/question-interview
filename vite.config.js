@@ -18,6 +18,10 @@ export default defineConfig({
       '@constants': path.resolve(__dirname, 'src/constants'),
       '@redux': path.resolve(__dirname, 'src/redux'),
       '@services': path.resolve(__dirname, 'src/services'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
+  },
+  optimizeDeps: {
+    include: ['prismjs'],
   },
 });

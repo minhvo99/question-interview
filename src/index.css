@@ -4,6 +4,13 @@
 @import '@fontsource/roboto/500.css';
 @import '@fontsource/roboto/700.css';
 
+@import 'froala-editor/css/froala_editor.pkgd.min.css';
+@import 'froala-editor/css/froala_style.min.css';
+
+@import 'froala-editor/css/themes/gray.min.css';
+
+@import 'font-awesome/css/font-awesome.css';
+
 @layer components {
   .container {
     @apply mx-auto flex max-w-screen-xl gap-6 px-6 py-10 sm:gap-8;

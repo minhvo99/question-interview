@@ -9,30 +9,28 @@ import Typography from '@mui/material/Typography';
 
 function DrawerAppBar() {
   return (
-    <div className=''>
-      <Box className='container'>
-        <CssBaseline />
-        <AppBar component='nav'>
-          <Toolbar>
-            <IconButton
-              color='inherit'
-              aria-label='open drawer'
-              edge='start'
-              sx={{ mr: 2, display: { sm: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant='h6'
-              component='div'
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            >
-              Question Interview
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </div>
+    <Box className='container'>
+      <CssBaseline />
+      <AppBar component='nav'>
+        <Toolbar>
+          <IconButton
+            color='inherit'
+            aria-label='open drawer'
+            edge='start'
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant='h6'
+            component='div'
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            Question Interview
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
 

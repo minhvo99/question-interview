@@ -33,7 +33,6 @@ function QuestionList({ selectedCategory }) {
           newList = [...prev, ...posts.data];
         }
 
-        // Lọc bỏ trùng key theo id
         const uniqueList = newList.filter(
           (item, index, self) =>
             index === self.findIndex((q) => q.id === item.id),
@@ -79,10 +78,7 @@ function QuestionList({ selectedCategory }) {
               <p className='text-lg font-semibold'>
                 {idx + 1}. {ques.Title}
               </p>
-              <Chip
-                label={LEVELMAPPING[ques.Level].name}
-                color={LEVELMAPPING[ques.Level].color}
-              />
+              <Chip label={ques.Level} color={ques.Level} />
             </Typography>
           </AccordionSummary>
           <QuestionDetail description={ques.Description} />

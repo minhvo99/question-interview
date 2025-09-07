@@ -1,30 +1,40 @@
 import { AccordionDetails } from '@mui/material';
-import { useEffect } from 'react';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/vs2015.css'; // Dark theme giống VS Code
+
+import Prism from 'prismjs';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-css';
+
+import 'prismjs/themes/prism-tomorrow.css';
+
+function highlightCode(html) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+
+  doc.querySelectorAll('pre code').forEach((block) => {
+    const language = block.className.replace('language-', '') || 'javascript';
+    const code = block.textContent;
+
+    const grammar = Prism.languages[language] || Prism.languages.javascript;
+    const highlighted = Prism.highlight(code, grammar, language);
+
+    block.innerHTML = highlighted;
+    block.classList.add('language-' + language);
+  });
+
+  return doc.body.innerHTML;
+}
 
 function QuestionDetail({ description }) {
-  const cleanHtml = description
-    .replace(/<!DOCTYPE html>/g, '')
-    .replace(/<html[^>]*>/g, '')
-    .replace(/<\/html>/g, '')
-    .replace(/<head[^>]*>[\s\S]*?<\/head>/g, '')
-    .replace(/<body[^>]*>/g, '')
-    .replace(/<\/body>/g, '')
-    .trim();
+  const highlightedHtml = highlightCode(description);
 
-  useEffect(() => {
-    document.querySelectorAll('pre code').forEach((el) => {
-      hljs.highlightElement(el);
-    });
-  }, [cleanHtml]);
   if (!description) return null;
 
   return (
     <AccordionDetails>
       <div
         className='question-content p-4 rounded-lg '
-        dangerouslySetInnerHTML={{ __html: cleanHtml }}
+        dangerouslySetInnerHTML={{ __html: highlightedHtml }}
       />
     </AccordionDetails>
   );
