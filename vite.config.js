@@ -24,4 +24,10 @@ export default defineConfig({
   optimizeDeps: {
     include: ['prismjs'],
   },
+  build: {
+    outDir: 'dist',
+  },
+  server: {
+    historyApiFallback: true,
+  },
 });
