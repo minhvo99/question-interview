@@ -60,7 +60,7 @@ const Editor = ({ value, onChange }) => {
     );
     if (el) el.remove();
     console.log('runnnnnn');
-  }, [model, setModel]);
+  }, [model, setModel, onChange, value]);
 
   return (
     <div className='w-full'>
