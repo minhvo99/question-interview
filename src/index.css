@@ -18,7 +18,3 @@
 .fr-second-toolbar {
   display: none;
 }
-
-div[style*='z-index:9999'][style*='width:100%'][style*='position:relative'] {
-  display: none !important;
-}

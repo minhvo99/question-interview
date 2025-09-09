@@ -53,12 +53,12 @@ const Editor = ({ value, onChange }) => {
     },
   };
   useEffect(() => {
-    const childElement = document.getElementById('fr-logo'); // Select the child element
-    if (childElement && childElement.parentNode) {
-      console.log('runnnnn');
-
-      childElement.parentNode.removeChild(childElement); // Remove the child from its parent
-    }
+    const el = Array.from(document.querySelectorAll('div')).find((div) =>
+      div.textContent.includes(
+        'Unlicensed copy of the Froala Editor. Use it legally by purchasing a license.',
+      ),
+    );
+    if (el) el.remove();
   }, []);
 
   return (
