@@ -53,23 +53,13 @@ const Editor = ({ value, onChange }) => {
     },
   };
   useEffect(() => {
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('div').forEach((div) => {
-        if (
-          div.textContent.includes(
-            'Unlicensed copy of the Froala Editor. Use it legally by purchasing a license.',
-          )
-        ) {
-          div.remove();
-          console.log('removed');
-        }
-      });
-      console.log('not remove yet');
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => observer.disconnect();
+    const el = Array.from(document.querySelectorAll('div')).find((div) =>
+      div.textContent.includes(
+        'Unlicensed copy of the Froala Editor. Use it legally by purchasing a license.',
+      ),
+    );
+    if (el) el.remove();
+    console.log('runnnnnn');
   }, [model, setModel, onChange, value]);
 
   return (

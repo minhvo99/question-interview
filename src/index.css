@@ -18,3 +18,10 @@
 .fr-second-toolbar {
   display: none;
 }
+div:has(
+    > a:contains(
+        'Unlicensed copy of the Froala Editor. Use it legally by purchasing a license.'
+      )
+  ) {
+  display: none !important;
+}
